@@ -1,7 +1,7 @@
 package com.zexu.serialpicture.service.impl;
 
 import com.zexu.serialpicture.repository.LabelRepository;
-import com.zexu.serialpicture.repository.entity.Label;
+import com.zexu.serialpicture.activity.entity.Label;
 import com.zexu.serialpicture.service.LabelService;
 
 import java.util.List;

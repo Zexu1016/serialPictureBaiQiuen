@@ -4,29 +4,46 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="收藏"
-        android:textSize="20sp"
-        android:textStyle="bold" />
+        android:orientation="vertical">
 
-    <CheckBox
-        android:id="@+id/ck_collect"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:background="@drawable/collect_selector"
-        android:button="@null"
-        android:scaleX="0.3"
-        android:scaleY="0.3" />
+        <CheckBox
+            android:id="@+id/ck_collect"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_gravity="center"
+            android:background="@drawable/collect_selector"
+            android:button="@null"
+            android:scaleX="1"
+            android:scaleY="1" />
+
+        <TextView
+            android:id="@+id/tv_collect"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="未收藏"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
 
     <Button
-        android:id="@+id/btn_deliver"
+        android:id="@+id/btn_catalogue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:text="目录"
+        android:textSize="23sp" />
+
+    <Button
+        android:id="@+id/btn_collect"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
         android:text="收藏目录"
         android:textSize="23sp" />
 

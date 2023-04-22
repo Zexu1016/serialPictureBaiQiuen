@@ -12,19 +12,19 @@
         android:theme="@style/Theme.SerialPicture"
         tools:targetApi="31">
         <activity
-            android:name=".CatalogueActivit"
+            android:name=".activity.CollectCatalogueActivity"
             android:exported="false" />
         <activity
-            android:name=".CollectActivity"
+            android:name=".activity.CatalogueActivity"
             android:exported="false" />
         <activity
-            android:name=".LabelActivity"
+            android:name=".activity.LabelActivity"
             android:exported="false" />
         <activity
-            android:name=".SettingActivity"
+            android:name=".activity.SettingActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.MainActivity"
+            android:name=".activity.CollectActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
