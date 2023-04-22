@@ -7,7 +7,7 @@ import com.zexu.serialpicture.service.CollectService;
 import java.util.List;
 
 public class CollectServiceImpl implements CollectService {
-    private CollectRepository collectRepository;
+    private CollectRepository collectRepository = new CollectRepository();
 
     @Override
     public boolean save(Collect collect) {
