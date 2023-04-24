@@ -37,6 +37,7 @@ public class CollectCatalogueActivity extends AppCompatActivity implements Adapt
         跳转到所点击的页面
         (这里与另外一个目录文件类似，后续可以创建DeliverUtil类在Util中，调用其中编写的方法进行传输)
         */
+        //(viewPager) = setCurrentItem(pageList.get(position).getId());
         ToastUtil.show(this,"跳转到"+pageList.get(position).getId()+"号页面");
     }
 }
