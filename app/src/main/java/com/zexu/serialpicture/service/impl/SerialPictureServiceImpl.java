@@ -1,7 +1,7 @@
 package com.zexu.serialpicture.service.impl;
 
 import com.zexu.serialpicture.repository.SerialPictureRepository;
-import com.zexu.serialpicture.activity.entity.SerialPicture;
+import com.zexu.serialpicture.repository.entity.SerialPicture;
 import com.zexu.serialpicture.service.SerialPictureService;
 
 import java.util.List;

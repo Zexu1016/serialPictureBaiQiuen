@@ -39,6 +39,8 @@ public class CollectActivity extends AppCompatActivity implements CompoundButton
         //如果选中了，就收藏进收藏目录中
         if(compoundButton.isChecked()&&!had_collect){
             //收藏进目录
+            Page page = new Page(/*()getCurrentItem*/);
+            pageList.add(page);
 
             //标记为已经收藏
             had_collect = true;
@@ -48,6 +50,8 @@ public class CollectActivity extends AppCompatActivity implements CompoundButton
         //如果已经收藏,再次点击,则将其删除出目录
         else if(had_collect){
             //在目录中删除
+            /*getCurrentItem*/
+            //pageList.remove();
 
             //标记为未收藏
             had_collect = false;

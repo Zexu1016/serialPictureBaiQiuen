@@ -1,4 +1,4 @@
-package com.zexu.serialpicture.activity.entity;
+package com.zexu.serialpicture.repository.entity;
 
 //import lombok.Data;
 //
