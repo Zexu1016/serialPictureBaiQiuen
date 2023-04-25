@@ -20,9 +20,9 @@ public interface CollectRepository {
 
 
 
-    @Query("SELECT * FROM collect WHERE id = :id")
+    @Query("SELECT * FROM tb_collect WHERE id = :id")
     public Collect selectById(Integer id);
 
-    @Query("SELECT * FROM collect")
+    @Query("SELECT * FROM tb_collect")
     public List<Collect> selectAll();
 }

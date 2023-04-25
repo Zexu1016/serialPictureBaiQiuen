@@ -8,6 +8,7 @@ import android.os.IBinder;
 import androidx.annotation.Nullable;
 
 import com.zexu.serialpicture.repository.SerialPictureRepository;
+import com.zexu.serialpicture.repository.database.SerialPictureDatabase;
 import com.zexu.serialpicture.repository.entity.SerialPicture;
 import com.zexu.serialpicture.service.CollectService;
 import com.zexu.serialpicture.service.SerialPictureService;
@@ -15,11 +16,12 @@ import com.zexu.serialpicture.service.SerialPictureService;
 import java.util.List;
 
 public class SerialPictureServiceImpl extends Service implements SerialPictureService {
-    private SerialPictureRepository serialPictureRepository;
+    private final SerialPictureRepository serialPictureRepository
+            = SerialPictureDatabase.getInstance(this).serialPictureRepository();
 
     @Override
     public List<SerialPicture> selectAll() {
-        return null;
+        return serialPictureRepository.selectAll();
     }
 
     class LocalBinder extends Binder {

@@ -8,6 +8,7 @@ import android.os.IBinder;
 import androidx.annotation.Nullable;
 
 import com.zexu.serialpicture.repository.LabelRepository;
+import com.zexu.serialpicture.repository.database.SerialPictureDatabase;
 import com.zexu.serialpicture.repository.entity.Label;
 import com.zexu.serialpicture.service.CollectService;
 import com.zexu.serialpicture.service.LabelService;
@@ -15,31 +16,36 @@ import com.zexu.serialpicture.service.LabelService;
 import java.util.List;
 
 public class LabelServiceImpl extends Service implements LabelService{
-    private LabelRepository labelRepository;
+
+    private final LabelRepository labelRepository = SerialPictureDatabase.getInstance(this).labelRepository();
+
 
     @Override
     public boolean save(Label label) {
-        return false;
+        labelRepository.save(label);
+        return true;
     }
 
     @Override
     public boolean delete(Label label) {
-        return false;
+        labelRepository.delete(label);
+        return true;
     }
 
     @Override
-    public boolean update(Label newLabel, Label oldLabel) {
-        return false;
+    public boolean update(Label label) {
+        labelRepository.update(label);
+        return true;
     }
 
     @Override
     public Label selectById(Integer id) {
-        return null;
+        return labelRepository.selectById(id);
     }
 
     @Override
     public List<Label> selectAll() {
-        return null;
+        return labelRepository.selectAll();
     }
 
     class LocalBinder extends Binder {
