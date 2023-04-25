@@ -10,7 +10,7 @@ public interface LabelService {
 
     public boolean delete(Label label);
 
-    public boolean update(Label newLabel, Label oldLabel);
+    public boolean update(Label Label);
 
     public Label selectById(Integer id);
 

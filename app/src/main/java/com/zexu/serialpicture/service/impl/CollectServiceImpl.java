@@ -7,6 +7,7 @@ import android.os.IBinder;
 
 import androidx.annotation.Nullable;
 
+import com.zexu.serialpicture.repository.CollectRepository;
 import com.zexu.serialpicture.repository.database.SerialPictureDatabase;
 import com.zexu.serialpicture.repository.entity.Collect;
 import com.zexu.serialpicture.service.CollectService;
@@ -15,28 +16,28 @@ import java.util.List;
 
 public class CollectServiceImpl extends Service implements CollectService {
 
-    private final SerialPictureDatabase serialPictureDatabase = SerialPictureDatabase.getInstance(this);
+    private final CollectRepository collectRepository = SerialPictureDatabase.getInstance(this).collectRepository();
 
     @Override
     public boolean save(Collect collect) {
-        serialPictureDatabase.collectRepository().save(collect);
+        collectRepository.save(collect);
         return true;
     }
 
     @Override
     public boolean delete(Collect collect) {
-        serialPictureDatabase.collectRepository().delete(collect);
+        collectRepository.delete(collect);
         return true;
     }
 
     @Override
     public Collect selectById(Integer id) {
-        return serialPictureDatabase.collectRepository().selectById(id);
+        return collectRepository.selectById(id);
     }
 
     @Override
     public List<Collect> selectAll() {
-        return serialPictureDatabase.collectRepository().selectAll();
+        return collectRepository.selectAll();
     }
 
     class LocalBinder extends Binder {
