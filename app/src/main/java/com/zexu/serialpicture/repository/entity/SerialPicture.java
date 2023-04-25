@@ -6,7 +6,7 @@ import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
-@Entity(tableName = "serial_picture")
+@Entity(tableName = "tb_serial_picture")
 public class SerialPicture {
 
     @PrimaryKey(autoGenerate = true)

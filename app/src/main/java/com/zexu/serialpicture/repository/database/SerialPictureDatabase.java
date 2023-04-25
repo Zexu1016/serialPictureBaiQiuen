@@ -12,6 +12,7 @@ import androidx.sqlite.db.SupportSQLiteOpenHelper;
 
 import com.zexu.serialpicture.repository.CollectRepository;
 import com.zexu.serialpicture.repository.LabelRepository;
+import com.zexu.serialpicture.repository.SerialPictureRepository;
 import com.zexu.serialpicture.repository.entity.Collect;
 import com.zexu.serialpicture.repository.entity.Label;
 import com.zexu.serialpicture.repository.entity.SerialPicture;
@@ -38,7 +39,7 @@ public abstract class SerialPictureDatabase extends RoomDatabase {
 
     public abstract LabelRepository labelRepository();
 
-    public abstract SerialPicture serialPicture();
+    public abstract SerialPictureRepository serialPictureRepository();
 
     @Override
     public void clearAllTables() {
