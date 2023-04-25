@@ -15,16 +15,18 @@ import java.util.List;
 
 public class CollectServiceImpl extends Service implements CollectService {
 
-    private SerialPictureDatabase serialPictureDatabase = SerialPictureDatabase.getInstance(this);
+    private final SerialPictureDatabase serialPictureDatabase = SerialPictureDatabase.getInstance(this);
 
     @Override
     public boolean save(Collect collect) {
-        return serialPictureDatabase.collectRepository().save(collect);
+        serialPictureDatabase.collectRepository().save(collect);
+        return true;
     }
 
     @Override
     public boolean delete(Collect collect) {
-        return serialPictureDatabase.collectRepository().delete(collect);
+        serialPictureDatabase.collectRepository().delete(collect);
+        return true;
     }
 
     @Override
