@@ -43,7 +43,7 @@ public class CollectServiceImpl extends Service implements CollectService {
         return collectRepository.selectAll();
     }
 
-    class LocalBinder extends Binder {
+    public class LocalBinder extends Binder {
         public CollectService getService() {
             return CollectServiceImpl.this;
         }

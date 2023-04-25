@@ -48,7 +48,7 @@ public class LabelServiceImpl extends Service implements LabelService{
         return labelRepository.selectAll();
     }
 
-    class LocalBinder extends Binder {
+    public class LocalBinder extends Binder {
         public LabelService getService() {
             return LabelServiceImpl.this;
         }
