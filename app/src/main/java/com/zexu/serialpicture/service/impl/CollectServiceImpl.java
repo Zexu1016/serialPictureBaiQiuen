@@ -19,13 +19,16 @@ public class CollectServiceImpl extends Service implements CollectService {
     private final CollectRepository collectRepository = SerialPictureDatabase.getInstance(this).collectRepository();
 
     @Override
-    public boolean save(Collect collect) {
+    public boolean save(Integer location) {
+        Collect collect = new Collect();
+        collect.location = location.toString();
         collectRepository.save(collect);
         return true;
     }
 
     @Override
-    public boolean delete(Collect collect) {
+    public boolean delete(Integer location) {
+        Collect collect = collectRepository.selectByLocation(location.toString());
         collectRepository.delete(collect);
         return true;
     }

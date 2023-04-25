@@ -5,9 +5,9 @@ import com.zexu.serialpicture.repository.entity.Collect;
 import java.util.List;
 
 public interface CollectService {
-    public boolean save(Collect collect);
+    public boolean save(Integer location);
 
-    public boolean delete(Collect collect);
+    public boolean delete(Integer location);
 
     public Collect selectById(Integer id);
 
