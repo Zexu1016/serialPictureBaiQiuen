@@ -18,6 +18,5 @@ public class LabelActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_label);
 
-        List<Object> objects = Arrays.asList();
     }
 }
