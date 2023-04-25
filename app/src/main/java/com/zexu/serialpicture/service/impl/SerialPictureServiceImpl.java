@@ -24,7 +24,7 @@ public class SerialPictureServiceImpl extends Service implements SerialPictureSe
         return serialPictureRepository.selectAll();
     }
 
-    class LocalBinder extends Binder {
+    public class LocalBinder extends Binder {
         public SerialPictureService getService() {
             return SerialPictureServiceImpl.this;
         }

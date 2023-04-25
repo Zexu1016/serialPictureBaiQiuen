@@ -25,4 +25,7 @@ public interface CollectRepository {
 
     @Query("SELECT * FROM tb_collect")
     public List<Collect> selectAll();
+
+    @Query("SELECT * FROM tb_collect WHERE location = :location")
+    public Collect selectByLocation(String location);
 }
