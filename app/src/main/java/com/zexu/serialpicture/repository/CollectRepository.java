@@ -1,25 +1,28 @@
 package com.zexu.serialpicture.repository;
 
+import androidx.room.Dao;
+import androidx.room.Delete;
+import androidx.room.Insert;
+import androidx.room.Query;
+
 import com.zexu.serialpicture.repository.entity.Collect;
 
 import java.util.List;
 
-public class CollectRepository {
-    public boolean save(Collect collect) {
-        return true;
-    }
+@Dao
+public interface CollectRepository {
 
-    public boolean delete(Collect collect) {
-        return true;
-    }
+    @Insert
+    public boolean save(Collect collect);
+
+    @Delete
+    public boolean delete(Collect collect);
 
 
 
-    public Collect selectById(Integer id) {
-        return null;
-    }
+    @Query("SELECT * FROM collect WHERE id = :id")
+    public Collect selectById(Integer id);
 
-    public List<Collect> selectAll() {
-        return null;
-    }
+    @Query("SELECT * FROM collect")
+    public List<Collect> selectAll();
 }
