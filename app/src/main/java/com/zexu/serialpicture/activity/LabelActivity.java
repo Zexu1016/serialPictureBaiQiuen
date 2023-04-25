@@ -7,6 +7,9 @@ import android.os.Bundle;
 import com.zexu.serialpicture.R;
 import com.zexu.serialpicture.service.impl.LabelServiceImpl;
 
+import java.util.Arrays;
+import java.util.List;
+
 public class LabelActivity extends AppCompatActivity {
     private LabelServiceImpl labelService;
 
@@ -14,5 +17,6 @@ public class LabelActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_label);
+
     }
 }
