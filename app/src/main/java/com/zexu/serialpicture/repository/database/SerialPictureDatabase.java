@@ -11,9 +11,12 @@ import androidx.room.RoomDatabase;
 import androidx.sqlite.db.SupportSQLiteOpenHelper;
 
 import com.zexu.serialpicture.repository.CollectRepository;
+import com.zexu.serialpicture.repository.LabelRepository;
 import com.zexu.serialpicture.repository.entity.Collect;
+import com.zexu.serialpicture.repository.entity.Label;
+import com.zexu.serialpicture.repository.entity.SerialPicture;
 
-@Database(entities = {Collect.class}, version = 1)
+@Database(entities = {Collect.class, Label.class, SerialPicture.class}, version = 1)
 public abstract class SerialPictureDatabase extends RoomDatabase {
 
     private static final String DATABASE_NAME = "serial_picture_db";
@@ -32,6 +35,10 @@ public abstract class SerialPictureDatabase extends RoomDatabase {
     }
 
     public abstract CollectRepository collectRepository();
+
+    public abstract LabelRepository labelRepository();
+
+    public abstract SerialPicture serialPicture();
 
     @Override
     public void clearAllTables() {

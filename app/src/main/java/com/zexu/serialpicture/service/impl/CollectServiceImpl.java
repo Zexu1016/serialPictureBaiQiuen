@@ -17,13 +17,6 @@ public class CollectServiceImpl extends Service implements CollectService {
 
     private final SerialPictureDatabase serialPictureDatabase = SerialPictureDatabase.getInstance(this);
 
-    class LocalBinder extends Binder {
-        public CollectService getService() {
-            return CollectServiceImpl.this;
-        }
-
-    }
-
     @Override
     public boolean save(Collect collect) {
         serialPictureDatabase.collectRepository().save(collect);
@@ -44,6 +37,12 @@ public class CollectServiceImpl extends Service implements CollectService {
     @Override
     public List<Collect> selectAll() {
         return serialPictureDatabase.collectRepository().selectAll();
+    }
+
+    class LocalBinder extends Binder {
+        public CollectService getService() {
+            return CollectServiceImpl.this;
+        }
     }
 
     @Nullable
