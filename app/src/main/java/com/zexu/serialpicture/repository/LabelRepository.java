@@ -4,24 +4,13 @@ import com.zexu.serialpicture.repository.entity.Label;
 
 import java.util.List;
 
-public class LabelRepository {
-    public boolean save(Label label) {
-        return true;
-    }
+public interface LabelRepository {
+    public boolean save(Label label);
+    public boolean delete(Label label);
 
-    public boolean delete(Label label) {
-        return true;
-    }
+    public boolean update(Label newLabel, Label oldLabel);
 
-    public boolean update(Label newLabel, Label oldLabel) {
-        return true;
-    }
+    public Label selectById(Integer id);
 
-    public Label selectById(Integer id) {
-        return null;
-    }
-
-    public List<Label> selectAll() {
-        return null;
-    }
+    public List<Label> selectAll();
 }

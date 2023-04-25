@@ -13,10 +13,10 @@ import java.util.List;
 public interface CollectRepository {
 
     @Insert
-    public boolean save(Collect collect);
+    public void save(Collect collect);
 
     @Delete
-    public boolean delete(Collect collect);
+    public void delete(Collect collect);
 
 
 

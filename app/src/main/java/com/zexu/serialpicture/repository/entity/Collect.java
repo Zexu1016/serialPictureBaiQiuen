@@ -9,8 +9,8 @@ import androidx.room.PrimaryKey;
 public class Collect {
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "id", typeAffinity = ColumnInfo.INTEGER)
-    Integer id;
+    public Integer id;
 
     @ColumnInfo(name = "location", typeAffinity = ColumnInfo.TEXT)
-    String location;
+    public String location;
 }
