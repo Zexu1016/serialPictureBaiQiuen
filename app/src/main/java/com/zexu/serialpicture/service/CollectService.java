@@ -9,8 +9,6 @@ public interface CollectService {
 
     public boolean delete(Collect collect);
 
-
-
     public Collect selectById(Integer id);
 
     public List<Collect> selectAll();

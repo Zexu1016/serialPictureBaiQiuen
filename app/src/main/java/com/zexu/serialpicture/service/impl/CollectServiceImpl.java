@@ -2,11 +2,11 @@ package com.zexu.serialpicture.service.impl;
 
 import android.app.Service;
 import android.content.Intent;
+import android.os.Binder;
 import android.os.IBinder;
 
 import androidx.annotation.Nullable;
 
-import com.zexu.serialpicture.repository.CollectRepository;
 import com.zexu.serialpicture.repository.database.SerialPictureDatabase;
 import com.zexu.serialpicture.repository.entity.Collect;
 import com.zexu.serialpicture.service.CollectService;
@@ -16,6 +16,13 @@ import java.util.List;
 public class CollectServiceImpl extends Service implements CollectService {
 
     private final SerialPictureDatabase serialPictureDatabase = SerialPictureDatabase.getInstance(this);
+
+    class LocalBinder extends Binder {
+        public CollectService getService() {
+            return CollectServiceImpl.this;
+        }
+
+    }
 
     @Override
     public boolean save(Collect collect) {
@@ -42,6 +49,6 @@ public class CollectServiceImpl extends Service implements CollectService {
     @Nullable
     @Override
     public IBinder onBind(Intent intent) {
-        return null;
+        return new LocalBinder();
     }
 }
