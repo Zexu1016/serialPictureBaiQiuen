@@ -7,12 +7,30 @@
     tools:context=".activity.MainActivity"
     android:orientation="vertical">
 
+    <TextView
+        android:id="@+id/tv_collect"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="未收藏"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+    <CheckBox
+        android:id="@+id/ck_collect"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_gravity="center"
+        android:background="@drawable/collect_selector"
+        android:button="@null"
+        android:scaleX="1"
+        android:scaleY="1" />
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/viewpager2"
         android:layout_width="match_parent"
-        android:layout_height="660sp">
+        android:layout_height="550sp">
 
     </androidx.viewpager2.widget.ViewPager2>
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -38,6 +56,7 @@
         android:background="#2196F3"
         android:layout_toRightOf="@+id/catalogue">
     </Button>
+
 
     <Button
     android:id="@+id/collect"
