@@ -17,7 +17,10 @@ import com.zexu.serialpicture.service.SerialPictureService;
 
 public class MainActivity extends AppCompatActivity {
 
-    private static final int NUM_PAGES = 5;
+    int[] arr = new int[]{
+            R.drawable.fengmian,R.drawable.one, R.drawable.two, R.drawable.three, R.drawable.four, R.drawable.five, R.drawable.six, R.drawable.seven, R.drawable.eight, R.drawable.nine, R.drawable.ten, R.drawable.end
+    };
+    private static final int NUM_PAGES = 10;
 
     private ViewPager2 viewPager;
 
@@ -67,12 +70,12 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public Fragment createFragment(int position) {
-                return new ScreenSlidePageFragment();
+                return new ScreenSlidePageFragment(arr[position]);
             }
 
             @Override
             public int getItemCount() {
-                return NUM_PAGES;
+                return arr.length;
             }
         }
         //ysh

@@ -6,17 +6,8 @@
 
     <!-- TODO: Update blank fragment layout -->
     <ImageView
+        android:id="@+id/main_img"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:src="@drawable/one"></ImageView>
+        android:layout_height="match_parent" />
 
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:src="@drawable/two"></ImageView>
-
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:src="@drawable/three"></ImageView>
 </FrameLayout>
