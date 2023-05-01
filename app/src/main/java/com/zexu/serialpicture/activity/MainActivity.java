@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
     };
     private static final int NUM_PAGES = 10;
     private static final int CatalogueResultCode = 1000;
-    List<Page> pageList = new ArrayList<>();
+    ArrayList<Integer> pageList = new ArrayList<>();
     boolean had_collect = false;
     private TextView tv_collect;
     private ViewPager2 viewPager;
@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_main);
         CheckBox ck_collect = findViewById(R.id.ck_collect);
-        ck_collect.setOnCheckedChangeListener(this::onClick);
+        ck_collect.setOnCheckedChangeListener(this::onCheckedChanged);
         Button btn_catalogue = findViewById(R.id.catalogue);
 
         btn_catalogue.setOnClickListener(this::onClick);
@@ -99,13 +99,13 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        collect.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, CollectActivity.class);
-                startActivity(intent);
-            }
-        });
+//        collect.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent intent = new Intent(MainActivity.this, CollectActivity.class);
+//                startActivity(intent);
+//            }
+//        });
 
     }
 
@@ -117,9 +117,6 @@ public class MainActivity extends AppCompatActivity {
             viewPager.setCurrentItem(which);
         }
         super.onActivityResult(requestCode, resultCode, data);
-    }
-
-    private void onClick(CompoundButton compoundButton, boolean b) {
     }
 
     @Override
@@ -173,20 +170,16 @@ public class MainActivity extends AppCompatActivity {
     }
     private void goToCollectCatalogueActivity() {
         Intent intent1 = new Intent();
-        Bundle bundle = new Bundle();
-        //传送收藏了的页面List到目标Activity
-        bundle.putParcelable("page", (Parcelable) pageList);
-        intent1.putExtras(bundle);
+        intent1.putIntegerArrayListExtra("pages", pageList);
         intent1.setClass(this,CollectCatalogueActivity.class);
         startActivity(intent1);
     }
-    
+
     public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
         //如果选中了，就收藏进收藏目录中
         if(compoundButton.isChecked()&&!had_collect){
             //收藏进目录
-            Page page = new Page(/*()getCurrentItem*/);
-            pageList.add(page);
+            pageList.add(viewPager.getCurrentItem());
 
             //标记为已经收藏
             had_collect = true;

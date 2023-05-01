@@ -12,18 +12,22 @@ import com.zexu.serialpicture.R;
 import com.zexu.serialpicture.activity.Adapters.CatalogueAdapter;
 import com.zexu.serialpicture.activity.Utils.ToastUtil;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class CollectCatalogueActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
-    List<Page> pageList;
+    ArrayList<Page> pageList = new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_collect_catalogue);
         //接收传来已收藏的页面
         Intent intent = getIntent();
-        Bundle bundle = intent.getExtras();
-        pageList = (List<Page>) bundle.getParcelable("page");
+        ArrayList<Integer> page = intent.getIntegerArrayListExtra("pages");
+
+        for (Integer integer : page) {
+            pageList.add(new Page(integer));
+        }
         //设置适配器
         CatalogueAdapter catalogueAdapter = new CatalogueAdapter(this, R.layout.catalogue_item ,pageList);//传入页面list
         ListView catalogue = findViewById(R.id.lv_collect_catalogue);
