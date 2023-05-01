@@ -12,6 +12,12 @@
         android:theme="@style/Theme.SerialPicture"
         tools:targetApi="31">
         <activity
+            android:name=".ScreenSlidePagerActivity"
+            android:exported="false" />
+        <activity
+            android:name=".FragmentActivity"
+            android:exported="false" />
+        <activity
             android:name=".activity.CollectCatalogueActivity"
             android:exported="false" />
         <activity
