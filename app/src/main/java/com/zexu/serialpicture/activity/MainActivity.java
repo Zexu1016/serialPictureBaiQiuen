@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
     private FragmentStateAdapter pagerAdapter;
 
     private SerialPictureService serialPictureService;
-    Button catalogue,label,setting;
+    Button catalogue,label,setting,collect;
     ViewPager2 viewPager2;
 
     @Override
@@ -37,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
 
         catalogue = findViewById(R.id.catalogue);
         label = findViewById(R.id.label);
+        collect = findViewById(R.id.collect);
         setting = findViewById(R.id.setting);
         viewPager = findViewById(R.id.viewpager2);
         pagerAdapter = new MainActivity.ScreenSlidePagerAdapter(this);
@@ -46,6 +47,22 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, CatalogueActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        label.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, LabelActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        collect.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, CollectActivity.class);
                 startActivity(intent);
             }
         });
