@@ -10,6 +10,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.RadioButton;
 
 import com.zexu.serialpicture.R;
 import com.zexu.serialpicture.ScreenSlidePageFragment;
@@ -29,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
     private SerialPictureService serialPictureService;
     Button catalogue,label,setting,collect;
     ViewPager2 viewPager2;
-
+    RadioButton max,mid,min;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,6 +56,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, LabelActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        setting.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, SettingActivity.class);
                 startActivity(intent);
             }
         });

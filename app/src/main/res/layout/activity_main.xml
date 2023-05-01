@@ -23,7 +23,9 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:text="目录"
-        android:textSize="30dp">
+        android:textSize="30dp"
+        android:textColor="#000000"
+        android:background="#2196F3">
     </Button>
 
     <Button
@@ -32,23 +34,32 @@
         android:layout_height="match_parent"
         android:text="书签"
         android:textSize="30dp"
+        android:textColor="#000000"
+        android:background="#2196F3"
         android:layout_toRightOf="@+id/catalogue">
     </Button>
-        <Button
-            android:id="@+id/collect"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:text="收藏"
-            android:textSize="30dp"
-            android:layout_toRightOf="@+id/label">>
-        </Button>
+
+    <Button
+    android:id="@+id/collect"
+    android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:text="收藏"
+        android:textSize="30dp"
+        android:textColor="#000000"
+        android:background="#2196F3"
+        android:layout_toRightOf="@+id/label">>
+    </Button>
+
     <Button
         android:id="@+id/setting"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:text="设置"
         android:textSize="30dp"
+        android:textColor="#000000"
+        android:background="#2196F3"
         android:layout_toRightOf="@+id/collect">>
     </Button>
+
     </RelativeLayout>
 </LinearLayout>
